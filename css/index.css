@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    margin: 0;
+    margin-top: 20%;
     padding: 0;
 }
 
@@ -18,11 +18,11 @@ body {
     text-align: center;
 }
 
-#titleScreen {
-    margin-top: 20%;
+h1 {
+    text-align: center;
 }
 
-#startButton {
+button {
     background-color: #007BFF;
     color: #fff;
     border: none;
@@ -30,22 +30,5 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-}
-
-#cadetActions{
-    margin-top: 20%;
-}
-
-h1 {
-    text-align: center;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 

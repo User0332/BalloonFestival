@@ -1,4 +1,4 @@
-	const titleScreen = document.getElementById('titleScreen');
+	const mainPage = document.getElementById('mainPage');
     const goBackButton = document.getElementById('goBackButton');
 
 	const cadetStartButton = document.getElementById('cadetStartButton');
