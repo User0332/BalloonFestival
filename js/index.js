@@ -1,17 +1,14 @@
-	const titleScreen = document.getElementById('titleScreen');
-    const cadetActionsSelect = document.getElementById('cadetActions');
-    const startButton = document.getElementById('startButton');
-    const goBackButton = document.getElementById('goBackButton');
+const titleScreen = document.getElementById('titleScreen')
+const cadetActionsSelect = document.getElementById('cadetActions')
+const startButton = document.getElementById('startButton')
+const goBackButton = document.getElementById('goBackButton')
 
-	startButton.addEventListener('click', function () {
-        titleScreen.style.display = 'none';
-        cadetActions.style.display = 'block';
-    });
+startButton.onclick = () => {
+	titleScreen.style.display = 'none'
+	cadetActionsSelect.style.display = 'block'
+}
 
-	goBackButton.addEventListener('click', function () {
-        titleScreen.style.display = 'block';
-        cadetActions.style.display = 'none';
-    });
-	
-
-	
+goBackButton.onclick = () => {
+	titleScreen.style.display = 'block'
+	cadetActionsSelect.style.display = 'none'
+}
