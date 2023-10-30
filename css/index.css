@@ -6,12 +6,16 @@ body {
 }
 
 .app-container {
-    max-width: 400px;
+    
+    height: 200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
+    border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 
 #titleScreen {
@@ -26,7 +30,6 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
-    margin-top: 20px;
 }
 
 #cadetActions{
