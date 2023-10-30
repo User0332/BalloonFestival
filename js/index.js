@@ -11,19 +11,25 @@
 	const seniorDataUpload = document.getElementById('seniorDataUpload');
 	const seniorDisplay = document.getElementById('seniorDisplay');
 
-	
+	// cadetStartButton.addEventListener('click', function () {
+	// 	hideTitleScreen();
+    //     cadetActions.style.display = 'block';	
+	// });
 
-	cadetStartButton.addEventListener('click', function () {
-        titleScreen.style.display = 'none';
-        cadetActions.style.display = 'block';
-		seniorActions.style.display = 'block';
+	// goBackButton.addEventListener('click', function () {
+    //     titleScreen.style.display = 'block';
+    //     cadetActions.style.display = 'none';
+    // });
 
-    });
+	// function hideTitleScreen()
+	// {
+	// 	titleScreen.style.display = 'none';
+	// }
 
-	goBackButton.addEventListener('click', function () {
-        titleScreen.style.display = 'block';
-        cadetActions.style.display = 'none';
-    });
+	// function showTitleScreen()
+	// {
+	// 	titleScreen.style.display = 'block';
+	// }
 	
 
 	
