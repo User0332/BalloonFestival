@@ -1,0 +1,50 @@
+/* Global styles */
+
+#cadetActions {
+    display: block;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+select, input, button {
+    margin: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-button {
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-button:hover {
+    background-color: #ff6b1d;
+}
