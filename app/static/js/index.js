@@ -11,10 +11,9 @@ const seniorRegistration = document.getElementById('seniorRegistration');
 const seniorDataUpload = document.getElementById('seniorDataUpload');
 const seniorDisplay = document.getElementById('seniorDisplay');
 
-// cadetStartButton.addEventListener('click', function () {
-// 	hideTitleScreen();
-//     cadetActions.style.display = 'block';	
-// });
+cadetStartButton.onclick = () => {
+    
+}
 
 // goBackButton.addEventListener('click', function () {
 //     titleScreen.style.display = 'block';

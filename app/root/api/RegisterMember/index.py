@@ -47,5 +47,5 @@ class Volunteer:
 def handler(app: webpy.App, *args):
 	from flask import request
 	
-	name: str = 
+	name: str = None
 
