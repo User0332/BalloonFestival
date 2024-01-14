@@ -35,23 +35,41 @@ FoodPreference = int
 
 NOT_A_CAP_MEMBER = 0
 
-@dataclass
 class Volunteer:
-	CAPID: int
-	fname: str
-	lname: str
-	squadron: str
-	grade: str
-	age: str
-	member_type: MemberType
-	blocks_committed: list[TimeSlot]
-	food_pref: FoodPreference
-	med_hist: str
-	icut_cert: bool
-	driver: bool
-	camping: tuple[bool, bool]
-	experience_level: int
-	weighted_exp: int = None
+	def __init__(
+		self,
+		CAPID: int,
+		fname: str,
+		lname: str,
+		squadron: str,
+		grade: str,
+		age: str,
+		member_type: MemberType,
+		blocks_committed: list[TimeSlot],
+		food_pref: FoodPreference,
+		med_hist: str,
+		icut_cert: bool,
+		driver: bool,
+		camping: tuple[bool, bool],
+		experience_level: int,
+		weighted_exp: int = None,
+	):
+		self.CAPID = CAPID
+		self.fname = fname
+		self.lname = lname
+		self.squadron = squadron
+		self.grade = grade
+		self.age = age
+		self.member_type = member_type
+		self.blocks_committed = blocks_committed
+		self.food_pref = food_pref
+		self.med_hist = med_hist
+		self.icut_cert = icut_cert
+		self.driver = driver
+		self.camping = camping
+		self.experience_level = experience_level
+		self.weighted_exp = weighted_exp
+
 
 
 	@property
