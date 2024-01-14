@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 import os
+import json
 import webpy
 import dill
 
@@ -52,7 +53,7 @@ class Volunteer:
 		driver: bool,
 		camping: tuple[bool, bool],
 		experience_level: int,
-		weighted_exp: int = None,
+		weighted_exp: int=None,
 	):
 		self.CAPID = CAPID
 		self.fname = fname
@@ -69,8 +70,7 @@ class Volunteer:
 		self.camping = camping
 		self.experience_level = experience_level
 		self.weighted_exp = weighted_exp
-
-
+		self.shifts_completed: list[int] = []
 
 	@property
 	def full_name(self):
@@ -86,12 +86,19 @@ class Volunteer:
 
 
 	def __str__(self) -> str:
-		"I have committed to {len(self.blocks_committed)} blocks: {','.join(self.blocks_committed)}."
-		return f"This is {'C/' if self.member_type == CADET_MEMBER else ''}{self.grade} {self.full_name} (Member #{self.CAPID}) from {self.squadron}. I am {self.age} years old and have been to the balloon festival {self.experience_level} time(s) ebfore. I am a {'cadet' if self.member_type == CADET_MEMBER else 'senior member'}. My food preference is {FOOD_PREF_MAP[self.food_pref]}. My medical history is {len(self.med_hist)} characters long.{' I am ICUT certified.' if self.icut_cert else ''}{' I am a driver.' if self.driver else ''} I will be camping on {CAMPING_MAP[self.camping]}. My weighted experience is {self.weighted_exp}"
+		return f"This is {'C/' if self.member_type == CADET_MEMBER else ''}{self.grade} {self.full_name} (Member #{self.CAPID}) from {self.squadron}. I am {self.age} years old and have been to the balloon festival {self.experience_level} time(s) before. I have committed to {len(self.blocks_committed)} block(s): {','.join(self.blocks_committed)}. I am a {'cadet' if self.member_type == CADET_MEMBER else 'senior member'}. My food preference is {FOOD_PREF_MAP[self.food_pref]}. My medical history is {len(self.med_hist)} characters long.{' I am ICUT certified.' if self.icut_cert else ''}{' I am a driver.' if self.driver else ''} I will be camping on {CAMPING_MAP[self.camping]}. My weighted experience is {self.weighted_exp}. I have completed {len(self.shifts_completed)} shift(s): {self.shifts_completed}."
 
 
 def handler(app: webpy.App, *args):
 	from flask import request, redirect
+
+	print(request.form["blocks_committed"])
+
+	# blocks_committed = []
+
+	# for i in range(1, 17):
+	# 	if (json.loads(request.form[f"block{i}"])):
+	# 		blocks_committed.append(i)
 
 	volunteer = Volunteer(
 		int(request.form["CAPID"]),
@@ -101,12 +108,12 @@ def handler(app: webpy.App, *args):
 		request.form["grade"],
 		int(request.form["age"]),
 		int(request.form["member_type"]),
-		request.form.get("blocks_committed"),
+		blocks_committed,
 		int(request.form["food_pref"]),
 		request.form["med_hist"],
-		bool(request.form["icut_cert"]),
-		bool(request.form["driver"]),
-		(bool(request.form["camping_fri"]), bool(request.form["camping_sat"])),
+		json.loads(request.form["icut_cert"]),
+		json.loads(request.form["driver"]),
+		(json.loads(request.form["camping_fri"]), json.loads(request.form["camping_sat"])),
 		int(request.form["experience_level"])
 	)
 

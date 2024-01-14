@@ -49,3 +49,17 @@ button {
 button:hover {
     background-color: #007BFF;
 }
+
+#allOptions {
+    margin-top: 10px; 
+}
+
+#allOptions label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#allOptions input {
+    margin-right: 5px; 
+}
+
