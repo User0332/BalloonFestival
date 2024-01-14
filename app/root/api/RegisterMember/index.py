@@ -23,13 +23,13 @@ class Volunteer:
 	age: str
 	member_type: MemberType
 	blocks_committed: list[TimeSlot]
-	food_pref: FoodPreference
+	# food_pref: FoodPreference
 	experience_level: int = None
 	weighted_exp: int = None
-	med_hist: str
-	icut_cert: bool
-	driver: bool
-	camping: tuple[bool, bool]
+	# med_hist: str
+	# icut_cert: bool
+	# driver: bool
+	# camping: tuple[bool, bool]
 
 	@property
 	def full_name(self):
