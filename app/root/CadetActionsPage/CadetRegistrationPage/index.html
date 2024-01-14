@@ -5,8 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<link rel="stylesheet" href="/static/css/theme.css"/>
+		<link rel="stylesheet" href="/static/css/Registration.css"/>
 
-		<script src="/static/js/theme.js" defer></script>
+		<script src="/static/js/Registration.js" defer></script>
 	
 		<title>Web Balloon Festival Portal</title>
 
@@ -16,7 +17,79 @@
 		<div id="cadetRegistrationPage" class="app-container">
 			<h1>Cadet Registration</h1>
 
-			<button id="sumbitForm"> Submit Form </button>
+			<form id="registration-form", action="/api/RegisterMember" method="POST">
+                <label for="CAPID">CAPID:</label>
+                <input type="number" id="CAPID" name="CAPID" required>
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="fname" required>
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lname" required>
+
+                <label for="squadron">Squadron:</label>
+                <input type="text" id="squadron" name="squadron" required>
+
+               <label for="grade">Grade:</label>
+                <select id="grade" name="grade" required>
+                    <option value="Amn">Amn</option>
+                    <option value="A1C">A1C</option>
+                    <option value="SrA">SrA</option>
+                    <option value="SSgt">SSgt</option>
+                    <option value="TSgt">TSgt</option>
+                    <option value="MSgt">MSgt</option>
+                    <option value="SMSgt">SMSgt</option>
+                    <option value="CMSgt">CMSgt</option>
+                    <option value="2LT">2LT</option>
+                    <option value="1Lt">1Lt</option>
+                    <option value="Capt">Capt</option>
+                    <option value="Maj">Maj</option>
+                    <option value="LtCol">LtCol</option>
+                    <option value="Col">Col</option>
+                    <option value="SM">SM</option>
+                    <option value="FO">FO</option>
+                    <option value="TFO">TFO</option>
+                    <option value="SFO">SFO</option>
+                </select>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+              
+                <label for="memberType">Member Type:</label>
+                <select id="memberType" name="member_type" required>
+                    <option value="0">Senior Member</option>
+                    <option value="1">Cadet</option>
+                </select>
+
+                <label for="foodPreferences">Food Preferences:</label>
+                <select id="foodPreferences" name="food_pref" required>
+                    <option value="0">No Food Pref</option>
+                    <option value="1">Vegetarian</option>
+					<option value="2">No Beef</option>
+                    <option value="3">No Pork</option>
+					<option value="4">Vegan</option>
+                </select>
+
+                <label for="numPreviousBalloonFestivals">Number of Previous Balloon Festivals:</label>
+                <input type="number" id="numPreviousBalloonFestivals" name="experience_level">
+
+                <label for="medicalHistory">Medical History:</label>
+                <textarea id="medicalHistory" name="med_hist"></textarea>
+
+                <label for="icutCertified">ICUT Certified:</label>
+                <input type="checkbox" id="icutCertified" name="icut_cert">
+
+                <label for="capDriver">CAP Driver:</label>
+                <input type="checkbox" id="capDriver" name="driver">
+
+				<label for="campingFriday">Camping Sunday:</label>
+                <input type="checkbox" id="campingFriday" name="camping_fri">
+
+                <label for="campingSaturday">Camping Saturday:</label>
+                <input type="checkbox" id="campingSaturday" name="camping_sat">
+
+                <button type="submit">Submit</button>
+            </form>
 
             <a href="/CadetActionsPage">
                 <button id="goBackButton" class="go-back-button"> Go Back </button>
