@@ -108,7 +108,22 @@
                 <label for="campingSaturday">Camping Saturday:</label>
                 <input type="checkbox" id="campingSaturday" name="camping_sat">
 
-                <button type="submit">Submit</button>
+                <button type="submit" onclick="confirmRegistration()" >Submit</button>
+
+                <script src="script.js"></script>
+
+                <script>function confirmRegistration() {
+                    // Example: Get selected options
+                    const allOptionsFieldset = document.getElementById("allOptions");
+                    const selectedOptions = Array.from(allOptionsFieldset.querySelectorAll('input[type="checkbox"]:checked')).map(checkbox => checkbox.value);
+
+                    // Show confirmation popup
+                    const confirmationMessage = "Are you sure you want to register with the following options:";
+                    if (confirm(confirmationMessage)) {
+                        // If user clicks OK, submit the form
+                        document.getElementById("registration-form").submit();
+                    }
+                }</script>
             </form>
 
             <a href="/CadetActionsPage">
