@@ -1,5 +1,9 @@
 from webpy import App
 import os
+import sys
+
+sys.path.append(os.path.abspath('.'))
+
 
 app = App(__name__, template_folder="html")
 
